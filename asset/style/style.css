@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+body{
+    background: #050813;
+    overflow-x: hidden;
+}
+
+.terain{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px;
+}
+.formulair{
+    grid-area: 2 / 2 / 3 / 3; 
+    height: 130vh;
+    /* display: none; */
+    
+}
+
+.addJouers img{
+    height: 28vh;
+    /* display: none; */
+    width: 134px;
+}
+/* form{
+    display: none;
+
+} */
+
+
+.cardsJouers{
+    /* display: flex; */
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.cardeJouer{
+    height: 28vh;
+    width: 134px;
+    background: url(/asset/image/badge_gold-removebg-preview2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: grid;
+ grid-template-rows: 20px 12px 74px 12px 17px 16px;
+    grid-template-columns: 7px 36px 74px;
+}
+
+
+.ratingAndPosition{
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center;
+    font-size: 10px;
+    position: relative;
+    right: 3px;
+    top: 3px;
+}
+.position{
+    
+    top: -5px;
+    position: relative;
+}
+.photo{
+    grid-area: 3/ 2 / 4 / 4; 
+}
+.photo img{
+    height: 123%;
+    width: 68%;
+    position: relative;
+    bottom: 19px;
+    left: 15px;
+}
+
+.name{
+    grid-area: 4 / 2 / 5 / 4;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    bottom: 6px;
+}
+.conditionPhisique{
+    grid-area: 5/ 2 / 6/ 4;
+    display: flex; 
+    justify-content: space-between;
+    text-align: center;
+    font-size: 7px;
+    padding: 0 10px 0 5px;
+}
+.conditionPhisique h6{
+    font-size: 10px;
+    position: relative;
+    bottom: 4px
+}
+.club{
+    grid-area: 6/ 2 / 7/ 4; 
+    display: flex;
+    position: relative;
+    top: 3px;
+    left: 33px;
+}
+/* gfgfgfgfgfg */
+.nationalite img{
+    height: 75%;
+    margin-right: 3px;
+}
+.ekipe img{
+    height: 75%;   
+}
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+                    
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+                    
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 217, 0, 0.308); 
+}
+
+
+.terrain-de-football{
+  
+    height: 519px;
+    background: url(/asset/image/train-incliner.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 134px 134px 134px 134px 134px ;
+    grid-template-rows: 124.3px 124.3px 124.3px 124.3px ;
+}
+
+
+
+
+
+.gardien-de-but{
+    grid-area: 4 / 3 / 5 / 4;
+    
+}
+
+
+.arriere-lateral1{
+    grid-area: 3 / 5 / 4 / 6;
+    position: relative;
+    top: 55px;
+}
+
+.arriere-lateral2{
+    grid-area: 3 / 1 / 4 / 2;
+    position: relative;
+    top: 55px;
+}
+
+.stoppeur{
+    grid-area: 3 / 4 / 4 / 5;
+    position: relative;
+    top: 20px;
+}
+
+.libero{
+
+grid-area: 3 / 2 / 4 / 3;
+position: relative;
+top: 20px;
+}
+
+
+
+.milieu-defensif1{
+    grid-area: 2 / 4 / 3 / 5;
+    position: relative;
+    bottom: 16px;
+    left: 22px;
+}
+
+.milieux-defensif2{
+    grid-area: 2 / 3 / 3 / 4;
+    position: relative;
+    bottom: 16px;
+}
+.milieux-defensif3{
+    grid-area: 2 / 2 / 3 / 3;
+    position: relative;
+    bottom: 16px;
+    right: 22px;
+}
+
+.attaquant1{
+    grid-area: 1 / 4 / 2 / 5;
+    position: relative;
+    bottom: 40px;
+    left: 53px;
+}
+
+.attaquant2{
+    grid-area: 1 / 3 / 2 / 4;
+    position: relative;
+    bottom: 40px;
+}
+.attaquant3{
+    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    bottom: 40px;
+    right: 53px
+}
+
+
+
+/* .joueurs{
+    display: none
+}
+ */
+#forme{
+    display: none
+} 
+.updat{
+    top: 31px;
+    left: 94px;
+    position: relative;
+    width: 15px;
+    cursor: pointer;
+
+}
+.delet{
+    top: 33px;
+    left: 92px;
+    position: relative;
+    width: 15px;
+    cursor: pointer;
+}
+.cardFiltrerParent{
+    background: darkslategrey;
+    display: none;
+   
+    /* width: 270px; */
+}
+.cardFiltrer{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.retour,.fermform{
+    width: 21px;
+    cursor: pointer;
+}
+
+
+@media  (max-width:756px)  {
+    .container{
+        
+        /* grid-template-rows: 30vh 100vh 30vh; */
+        display: flex;flex-direction: column;
+
+      
+    }
+    
+    .reserveJouers{
+        height:  30vh;
+        width: 100%;
+        display: flex;
+      overflow-x: scroll;
+      
+    
+    }
+    .cardeJouer{
+        display: grid;
+        grid-template-rows: 18px 0px 72px 9px 14px 12px;
+        grid-template-columns: 5px 22px 67px;
+    }
+    .photo img {
+        height: 103%;
+        width: 69%;
+        position: relative;
+        bottom: 3px;
+        left: 12px;
+    }
+    .updat {
+        top: 25px;
+        left: 78px;
+    }
+    .delet {
+        top: 26px;
+        left: 75px;
+ 
+    }
+    .terain{
+        padding-top: 40px;
+    }
+    .addJouersImag{
+       
+    margin-left: 20px;
+    height: 26vh;
+    width: 115px;
+    }
+    .cardsJouers{
+        width: 113vw;
+    margin-left: 13px;
+    }
+    .conditionPhisique{
+        column-gap: 2px;
+    }
+    .addJouers img {
+        height: 28vh;
+        /* display: none; */
+        width: 115px;
+    }
+}
+
+
+
+
+
+
+
