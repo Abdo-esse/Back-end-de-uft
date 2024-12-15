@@ -7,8 +7,23 @@ body{
     background: #050813;
     overflow-x: hidden;
 }
+.page{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    grid-template-rows: 100vh 40vh;
+}
+.menu{
+    grid-area: 1 / 1 / 2 / 2;
+}
+.content{
+    grid-area: 1 / 2 / 2 / 3;
+}
+.remlacement{
+    grid-area: 2 / 1 / 3 / 3;
+}
 
 .terain{
+    height: 100vh;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -130,7 +145,7 @@ body{
 
 .terrain-de-football{
   
-    height: 519px;
+    
     background: url(/asset/image/train-incliner.png);
     background-size: contain;
     background-repeat: no-repeat;
