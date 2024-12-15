@@ -45,13 +45,13 @@
 <div class="page">
   <nav class="menu">
     <ul>
-      <li><a href="">Club</a></li>
-      <li><a href="">Nationality</a></li>
-      <li><a href="">Playres</a></li>
-      <li><a href="">Goolker</a></li>
-      <li><a href="">No Goolker</a></li>
-      <li><a href=""> team</a></li>
-      <li><a href=""> terain</a></li>
+      <li><a href="club.php">Club</a></li>
+      <li><a href="Nationality.php">Nationality</a></li>
+      <li><a href="Playres.php">Playres</a></li>
+      <li><a href="Goolker.php">Goolker</a></li>
+      <li><a href="No-Goolker.php">No Goolker</a></li>
+      <li><a href="team.php"> team</a></li>
+      <li><a href="terain.php"> terain</a></li>
 
     </ul>
   </nav>
