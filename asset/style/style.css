@@ -5,6 +5,7 @@
 }
 body{
     background: #050813;
+    /* background: white; */
     overflow-x: hidden;
 }
 .page{
@@ -57,7 +58,7 @@ body{
 .cardeJouer{
     height: 28vh;
     width: 134px;
-    background: url(/asset/image/badge_gold-removebg-preview2.png);
+    background: url(../image/badge_gold-removebg-preview2.png);
     background-size: contain;
     background-repeat: no-repeat;
     display: grid;
@@ -146,7 +147,7 @@ body{
 .terrain-de-football{
   
     
-    background: url(/asset/image/train-incliner.png);
+    background: url(../image/train-incliner.png);
     background-size: contain;
     background-repeat: no-repeat;
     display: grid;
