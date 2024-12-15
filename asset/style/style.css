@@ -10,12 +10,23 @@ body{
 }
 .page{
     display: grid;
-    grid-template-columns: 30vw 70vw;
+    grid-template-columns: 20vw 80vw;
     grid-template-rows: 100vh 40vh;
 }
 .menu{
     grid-area: 1 / 1 / 2 / 2;
+    background: tan;
+    /* color: beige; */
 }
+.menu li{
+    height: calc(100vh/10);
+    border: #05081389 solid 0.5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .content{
     grid-area: 1 / 2 / 2 / 3;
 }
