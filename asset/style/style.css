@@ -14,7 +14,8 @@ body{
     grid-template-rows: 100vh 40vh;
 }
 .menu{
-    grid-area: 1 / 1 / 2 / 2;
+   width:20vw ;
+   height:100vh ;
     background: #404040;
     /* color: beige; */
 }

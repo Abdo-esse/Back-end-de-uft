@@ -46,7 +46,7 @@
  <?php  
  include_once("header.php")
  ?>
-  <div class=" content flex justify-between w-screen ">
+  <div class=" content  ">
      
     <!-- <div class="formulair">
       <div class="cardFiltrerParent">

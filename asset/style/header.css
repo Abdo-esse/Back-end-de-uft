@@ -1,0 +1,16 @@
+.menu{
+    width:20vw ;
+    height:100vh ;
+     background: #404040;
+     color: beige;
+ }
+ .menu li{
+     height: calc(100vh/10);
+     border: #05081389 solid 0.5px;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: beige;
+     text-decoration: none;
+ }

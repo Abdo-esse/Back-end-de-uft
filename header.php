@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./asset/style/header.css" />
 <nav class="menu">
     <ul>
       <li><a href="header.php">Club</a></li>
