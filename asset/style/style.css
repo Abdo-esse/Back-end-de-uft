@@ -15,7 +15,7 @@ body{
 }
 .menu{
     grid-area: 1 / 1 / 2 / 2;
-    background: tan;
+    background: #404040;
     /* color: beige; */
 }
 .menu li{
