@@ -18,6 +18,8 @@ body{
    height:100vh ;
     background: #404040;
     /* color: beige; */
+   
+
 }
 .menu li{
     height: calc(100vh/10);
