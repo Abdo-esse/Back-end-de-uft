@@ -41,8 +41,8 @@
 <body>
 <div class="page">
 <?php  
- include_once("header.php")
-
+ include_once("header.php");
+ include_once("conectdb.php")
  ?>
 <div class="content">
 
