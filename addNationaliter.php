@@ -37,7 +37,7 @@
     </style>
   </head>
 <body>
-
+ <h1 class=" text-white text-center text-xl ">Ajoute Natoinaliter</h1>
 <form  class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
@@ -51,25 +51,27 @@
                 class="inputsText fullName bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
                 required
+                name="inputname"
               />
             </div>
             <div class="mb-2">
               <label
                 for="photoJeuor"
                 class="block mb-2 text-sm font-medium text-white dark:text-white"
-                >Upload logo</label
-              >
+                >Upload logo
+                </label>
               <input
                 type="text"
                 id="photoJeuor"
                 class="inputsLien photoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
                 required
+                name="inputphoto"
               />
             </div>
             
             <div class="mb-2">
-           
+            <label
                 for="photoFlag"
                 class="block mb-2 text-sm font-medium text-white dark:text-white"
                 >city</label
@@ -78,8 +80,9 @@
                 type="name"
                 id="photoFlag"
                 class="inputsLien flagInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Entrer lien de limage"
+                placeholder="Entrer city du club"
                 required
+                name="inputcity"
               />
             </div>
             <div class="mb-2">
@@ -92,13 +95,14 @@
                 type="name"
                 id="NameClub"
                 class="inputsText clubInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Full-Club"
+                placeholder="Entrer country du club"
                 required
+                name="inputcountry"
               />
             </div>
             
                  <button
-              type="button"
+              type="submit"
               class="sendData text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               submit
