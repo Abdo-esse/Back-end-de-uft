@@ -54,3 +54,10 @@ create database FUT;
     );
  show TABLES;
 
+insert into club(
+   VALUES
+   (null,"Real Madrid","https://cdn.sofifa.net/meta/team/3468/120.png","Brazil","abdo"),
+   (null,"Real Madrid","https://cdn.sofifa.net/meta/team/3468/120.png","Brazil","abdo"),
+   (null,"Real Madrid","https://cdn.sofifa.net/meta/team/3468/120.png","Brazil","abdo")
+);
+SELECT * FROM club;
