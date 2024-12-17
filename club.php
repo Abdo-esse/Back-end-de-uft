@@ -45,9 +45,27 @@
 <?php  
  include_once("header.php");
  include_once("conectdb.php");
+
+
+    
+ if(isset($_POST['submit'])){
+  $name=$_POST['inputname'];
+  $logo=$_POST['inputphoto'];
+  $city=$_POST['inputcity'];
+  $country=$_POST['inputcountry'];
+  $test="insert into club (name,logo,city,country) values('$name','$logo','$city','$country')";
+  $run= mysqli_query($conn,$test);
+   
+}
+  
+
  $query="select * from club";
  $result=mysqli_query($conn,$query);
  
+
+
+
+
  ?>
 
 
