@@ -14,7 +14,7 @@ create database FUT;
     name VARCHAR(50),
     flage VARCHAR (200)
     );
-
+insert into Nationality (name,flage) values ('moroco','https://flagpedia.net/data/flags/emoji/twitter/256x256/ma.png');
 
     create table players(
        id int PRIMARY key AUTO_INCREMENT not null,
