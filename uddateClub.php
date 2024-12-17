@@ -2,12 +2,28 @@
 <html lang="en">
 
 
+<?php
+      include_once("conectdb.php");
+     if(isset($_POST['update'])){
+        $id=$_GET['updateid'];
+        $name=$_POST['inputname'];
+        $logo=$_POST['inputphoto'];
+        $city=$_POST['inputcity'];
+        $country=$_POST['inputcountry'];
+        $test=" update club
+                  set name='$name',logo='$logo',city='$city',country='$country'
+                  where id='$id'";
+        $run= mysqli_query($conn,$test);
+         
+      }
 
+
+?>
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>update club</title>
     <link rel="stylesheet" href="./asset/style/style.css" />
     <!-- tailwind -->
     <!-- carousel -->
@@ -43,8 +59,15 @@
     </style>
   </head>
 <body>
- <h1 class=" text-white text-center text-xl ">Ajoute Club</h1>
+ <h1 class=" text-white text-center text-xl ">update Club</h1>
 <form  action="./club.php" method="POST" class="card max-w-sm mx-auto p-2">
+    <?php 
+          include_once("conectdb.php");
+          $id=$_GET['updateid'];
+          $qurey=mysqli_query($conn,"select * from club where id='$id'");
+           while($row=mysqli_fetch_array($qurey)){
+            
+            ?>
             <div class="mb-2">
               <label
                 for="name"
@@ -54,6 +77,7 @@
               <input
                 type="name"
                 id="name"
+                value=" <?php echo $row['name']  ?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
                 required
@@ -69,6 +93,7 @@
               <input
                 type="text"
                 id="photoJeuor"
+                value="<?php echo $row ['logo']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
                 required
@@ -85,6 +110,7 @@
               <input
                 type="name"
                 id="photoFlag"
+                value="<?php echo $row ['city']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer city du club"
                 required
@@ -100,19 +126,23 @@
               <input
                 type="name"
                 id="NameClub"
+                value="<?php echo $row ['country']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer country du club"
                 required
                 name="inputcountry"
               />
             </div>
+
+            <?php }
+                ?>
             
                  <button
               type="submit"
               class=" text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-              name="submit"
+              name="update"
             >
-              submit
+             update
             </button>
             
           </form>
