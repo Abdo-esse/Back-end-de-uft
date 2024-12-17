@@ -1,3 +1,11 @@
+<?php 
+     include_once("conectdb.php");
+
+      
+?>
+
+
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,8 +45,8 @@
     </style>
   </head>
 <body>
- <h1 class=" text-white text-center text-xl ">Ajoute Natoinaliter</h1>
-<form  class="card max-w-sm mx-auto p-2">
+ <h1 class=" text-white text-center text-xl ">Ajoute Club</h1>
+<form  action ="club.php" method="POST" class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"
@@ -104,6 +112,7 @@
                  <button
               type="submit"
               class="sendData text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              name="submit"
             >
               submit
             </button>
