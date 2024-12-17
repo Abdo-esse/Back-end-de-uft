@@ -1,5 +1,15 @@
 <?php 
      include_once("conectdb.php");
+     if(isset($_POST['submit'])){
+      $name=$_POST['inputname'];
+      $logo=$_POST['inputphoto'];
+      $city=$_POST['inputcity'];
+      $country=$_POST['inputcountry'];
+      $query=mysqli_quer($conn,"insert into club (name,logo,city,country) values('$name,$logo,$city,$country') ");
+       if($puery){
+        echo"<script>alert(data inserted successfully)</script>"
+       }
+     }
 
       
 ?>
