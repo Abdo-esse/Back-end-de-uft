@@ -4,7 +4,10 @@
 <?php  
 
  include_once("conectdb.php");
-
+ $nameError='';
+ $logoError='';
+ $cityError='';
+ $countryError='';
 
     
  if(isset($_POST['submit'])){
@@ -12,12 +15,58 @@
   $logo=$_POST['inputphoto'];
   $city=$_POST['inputcity'];
   $country=$_POST['inputcountry'];
+
+  if (empty($name)) {
+    $nameError="Name error is Required";
+   }else{
+    $name=trim($name);
+    $name=htmlspecialchars($name);
+    if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$name)){
+      $nameError="<br> name shoulde containe only char and space";
+    }
+   }
+   if (empty($logo)) {
+    $logorror="logo error is Required";
+   }
+   else{
+    $logo=trim($logo);
+    $logo=htmlspecialchars($logo);
+    if(!preg_match("/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|bmp|svg))$/i",$logo)){
+      $logorror="<br> flag shoulde containe only char and space";
+    }
+    
+   }
+   if (empty($city)) {
+    $cityError="city error is Required";
+   }else{
+    $city=trim($city);
+    $city=htmlspecialchars($city);
+    if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$city)){
+      $cityError="<br> city shoulde containe only char and space";
+    }
+   }
+   if (empty($country)) {
+    $countryError="country error is Required";
+   }else{
+    $country=trim($country);
+    $country=htmlspecialchars($country);
+    if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$country)){
+      $countryError="<br> country shoulde containe only char and space";
+    }
+   }
+
+
+
+if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
   $query="insert into club (name,logo,city,country) values('$name','$logo','$city','$country')";
   $run= mysqli_query($conn,$query);
   if(isset( $run)){
     header("location: ./club.php");
     exit;
 }
+}
+
+ 
    
 }
 ?>

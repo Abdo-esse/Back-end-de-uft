@@ -11,18 +11,37 @@
  if(isset($_POST['submit'])){
     $name=$_POST['inputname'];
     $flage=$_POST['inputphoto'];
-     if (empty($name)) {
-      $nameError="Name error is Required";
-     }
-    
-    // $query="insert into Nationality (name,flage) values('$name','$flage')";
-    // $run= mysqli_query($conn,$query);
-    // if(isset( $run)){
-    //     header("location: ./Nationality.php");
-    //     exit;
-    // }
      
-  } 
+      if (empty($name)) {
+        $nameError="Name error is Required";
+       }else{
+        $name=trim($name);
+        $name=htmlspecialchars($name);
+        if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$name)){
+          $nameError="<br> name shoulde containe only char and space";
+        }
+       }
+       if (empty($flage)) {
+        $flagError="flage error is Required";
+       }
+       else{
+        $flage=trim($flage);
+        $flage=htmlspecialchars($flage);
+        if(!preg_match("/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|bmp|svg))$/i",$flage)){
+          $flagError="<br> flag shoulde containe only char and space";
+        }
+        
+       }
+     
+     if (empty($nameError) && empty($flagError)) {
+    $query="insert into Nationality (name,flage) values('$name','$flage')";
+    $run= mysqli_query($conn,$query);
+    if(isset( $run)){
+        header("location: ./Nationality.php");
+        exit;
+    }
+  }
+ }
  
  ?>
 
@@ -101,6 +120,9 @@
                 
                 name="inputphoto"
               />
+              <span style="color:red;" >
+              <?php echo $flagError  ?>
+              </span>
             </div>
             
             
