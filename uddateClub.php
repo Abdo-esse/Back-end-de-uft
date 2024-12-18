@@ -134,7 +134,7 @@
                 value=" <?php echo $row['name']  ?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
-                required
+             
                 name="inputname"
               />
               <span style="color:red;" >
@@ -153,7 +153,7 @@
                 value="<?php echo $row ['logo']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
-                required
+              
                 name="inputphoto"
               />
               <span style="color:red;" >
@@ -173,7 +173,7 @@
                 value="<?php echo $row ['city']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer city du club"
-                required
+           
                 name="inputcity"
               />
               <span style="color:red;" >
@@ -192,7 +192,7 @@
                 value="<?php echo $row ['country']?>"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer country du club"
-                required
+         
                 name="inputcountry"
               />
               <span style="color:red;" >
