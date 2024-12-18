@@ -10,6 +10,51 @@
         $logo=$_POST['inputphoto'];
         $city=$_POST['inputcity'];
         $country=$_POST['inputcountry'];
+
+        if (empty($name)) {
+          $nameError="Name error is Required";
+         }else{
+          $name=trim($name);
+          $name=htmlspecialchars($name);
+          if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$name)){
+            $nameError="<br> name shoulde containe only char and space";
+          }
+         }
+         if (empty($logo)) {
+          $logoError="logo error is Required";
+         }
+         else{
+          $logo=trim($logo);
+          $logo=htmlspecialchars($logo);
+          if(!preg_match("/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|bmp|svg))$/i",$logo)){
+            $logoError="<br> flag shoulde containe only char and space";
+          }
+          
+         }
+         if (empty($city)) {
+          $cityError="city error is Required";
+         }else{
+          $city=trim($city);
+          $city=htmlspecialchars($city);
+          if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$city)){
+            $cityError="<br> city shoulde containe only char and space";
+          }
+         }
+         if (empty($country)) {
+          $countryError="country error is Required";
+         }else{
+          $country=trim($country);
+          $country=htmlspecialchars($country);
+          if(!preg_match("/^[a-zA-ZÀ-ÿ\s'-]+$/",$country)){
+            $countryError="<br> country shoulde containe only char and space";
+          }
+         }
+      
+      
+      
+      if (empty($nameError)&& empty($logoError)&& empty($cityError)&& empty($countryError)) {
+
+
         $test=" update club
                   set name='$name',logo='$logo',city='$city',country='$country'
                   where id='$id'";
@@ -18,6 +63,7 @@
           header("location: ./club.php");
           exit;
       }
+    }
          
       }
 

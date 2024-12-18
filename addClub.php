@@ -26,13 +26,13 @@
     }
    }
    if (empty($logo)) {
-    $logorror="logo error is Required";
+    $logoError="logo error is Required";
    }
    else{
     $logo=trim($logo);
     $logo=htmlspecialchars($logo);
     if(!preg_match("/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|bmp|svg))$/i",$logo)){
-      $logorror="<br> flag shoulde containe only char and space";
+      $logoError="<br> flag shoulde containe only char and space";
     }
     
    }
@@ -57,7 +57,7 @@
 
 
 
-if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
+if (empty($nameError)&& empty($logoError)&& empty($cityError)&& empty($countryError)) {
   $query="insert into club (name,logo,city,country) values('$name','$logo','$city','$country')";
   $run= mysqli_query($conn,$query);
   if(isset( $run)){
@@ -124,9 +124,12 @@ if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
                 id="name"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
-                required
+                
                 name="inputname"
               />
+              <span style="color:red;" >
+              <?php echo $nameError  ?>
+              </span>
             </div>
             <div class="mb-2">
               <label
@@ -139,9 +142,12 @@ if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
                 id="photoJeuor"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
-                required
+               
                 name="inputphoto"
               />
+              <span style="color:red;" >
+              <?php echo $logoError  ?>
+              </span>
             </div>
             
             <div class="mb-2">
@@ -155,9 +161,12 @@ if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
                 id="photoFlag"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer city du club"
-                required
+                
                 name="inputcity"
               />
+              <span style="color:red;" >
+              <?php echo $cityError  ?>
+              </span>
             </div>
             <div class="mb-2">
               <label
@@ -170,9 +179,12 @@ if (empty($name)&& empty($logo)&& empty($city)&& empty($country)) {
                 id="NameClub"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer country du club"
-                required
+                
                 name="inputcountry"
               />
+              <span style="color:red;" >
+              <?php echo $countryError  ?>
+              </span>
             </div>
             
                  <button
