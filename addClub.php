@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php  
 
+ include_once("conectdb.php");
+
+
+    
+ if(isset($_POST['submit'])){
+  $name=$_POST['inputname'];
+  $logo=$_POST['inputphoto'];
+  $city=$_POST['inputcity'];
+  $country=$_POST['inputcountry'];
+  $query="insert into club (name,logo,city,country) values('$name','$logo','$city','$country')";
+  $run= mysqli_query($conn,$query);
+  if(isset( $run)){
+    header("location: ./club.php");
+    exit;
+}
+   
+}
+?>
 
 
 <head>
@@ -44,7 +63,7 @@
   </head>
 <body>
  <h1 class=" text-white text-center text-xl ">Ajoute Club</h1>
-<form  action="./logiqueAddClube.php" method="POST" class="card max-w-sm mx-auto p-2">
+<form   method="POST" class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"

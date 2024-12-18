@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php  
+ 
+ 
+ include_once("conectdb.php");
+
+
+ if(isset($_POST['submit'])){
+    $name=$_POST['inputname'];
+    $flage=$_POST['inputphoto'];
+    
+    
+    $query="insert into Nationality (name,flage) values('$name','$flage')";
+    $run= mysqli_query($conn,$query);
+    if(isset( $run)){
+        header("location: ./Nationality.php");
+        exit;
+    }
+     
+  } 
+ 
+ ?>
+
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,12 +63,9 @@
     </style>
   </head>
 <body>
-<h1 class=" text-white text-center text-xl "><?php include_once("logiqueNationaliter.php");
- echo $ret;
- ?>
-
+<h1 class=" text-white text-center text-xl ">Ajouter nationaliter
  </h1>
-<form  action="./logiqueNationaliter.php" method="POST" class="card max-w-sm mx-auto p-2">
+<form   method="POST" class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"

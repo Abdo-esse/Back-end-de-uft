@@ -14,6 +14,10 @@
                   set name='$name',logo='$logo',city='$city',country='$country'
                   where id='$id'";
         $run= mysqli_query($conn,$test);
+        if(isset( $run)){
+          header("location: ./club.php");
+          exit;
+      }
          
       }
 
@@ -60,7 +64,7 @@
   </head>
 <body>
  <h1 class=" text-white text-center text-xl ">update Club</h1>
-<form  action="./club.php" method="POST" class="card max-w-sm mx-auto p-2">
+<form   method="POST" class="card max-w-sm mx-auto p-2">
     <?php 
           include_once("conectdb.php");
           $id=$_GET['updateid'];
