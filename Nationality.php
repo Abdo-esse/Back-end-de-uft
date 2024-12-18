@@ -44,18 +44,7 @@
  
  include_once("header.php");
  include_once("conectdb.php");
- session_start();
- if(isset($_POST['submit'])){
-    $name=$_POST['inputname'];
-    $flage=$_POST['inputphoto'];
-    if(empty($name)){
-       $_SESSION['nameError']='Name is requered';
-    }
-    
-    $query="insert into Nationality (name,flage) values('$name','$flage')";
-    $run= mysqli_query($conn,$query);
-     
-  }
+ 
  $test="select * from Nationality";
  $result=mysqli_query($conn,$test);
  ?>
