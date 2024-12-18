@@ -41,13 +41,15 @@
 <body>
 <div class="page">
 <?php  
+ 
  include_once("header.php");
  include_once("conectdb.php");
+ session_start();
  if(isset($_POST['submit'])){
     $name=$_POST['inputname'];
     $flage=$_POST['inputphoto'];
     if(empty($name)){
-        
+       $_SESSION['nameError']='Name is requered';
     }
     
     $query="insert into Nationality (name,flage) values('$name','$flage')";
@@ -75,6 +77,7 @@
                 </svg>
             </div>
             <input type="text" id="table-search-users" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for users">
+            
         </div>
     </div>
     <div class="button-add-club p-2" >
