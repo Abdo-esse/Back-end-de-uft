@@ -5,19 +5,22 @@
  
  
  include_once("conectdb.php");
-
+ $nameError='';
+ $flagError='';
 
  if(isset($_POST['submit'])){
     $name=$_POST['inputname'];
     $flage=$_POST['inputphoto'];
+     if (empty($name)) {
+      $nameError="Name error is Required";
+     }
     
-    
-    $query="insert into Nationality (name,flage) values('$name','$flage')";
-    $run= mysqli_query($conn,$query);
-    if(isset( $run)){
-        header("location: ./Nationality.php");
-        exit;
-    }
+    // $query="insert into Nationality (name,flage) values('$name','$flage')";
+    // $run= mysqli_query($conn,$query);
+    // if(isset( $run)){
+    //     header("location: ./Nationality.php");
+    //     exit;
+    // }
      
   } 
  
@@ -81,7 +84,7 @@
                 name="inputname"  
               />
               <span style="color:red;" >
-           
+              <?php echo $nameError  ?>
               </span>
             </div>
             <div class="mb-2">
@@ -95,7 +98,7 @@
                 id="photoJeuor"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
-                required
+                
                 name="inputphoto"
               />
             </div>
