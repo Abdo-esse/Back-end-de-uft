@@ -4,6 +4,10 @@
 
 <?php
       include_once("conectdb.php");
+      $nameError='';
+      $logoError='';
+      $cityError='';
+      $countryError='';
      if(isset($_POST['update'])){
         $id=$_GET['updateid'];
         $name=$_POST['inputname'];
@@ -133,6 +137,9 @@
                 required
                 name="inputname"
               />
+              <span style="color:red;" >
+              <?php echo $nameError  ?>
+              </span>
             </div>
             <div class="mb-2">
               <label
@@ -149,6 +156,9 @@
                 required
                 name="inputphoto"
               />
+              <span style="color:red;" >
+              <?php echo $logoError  ?>
+              </span>
             </div>
             
             <div class="mb-2">
@@ -166,6 +176,9 @@
                 required
                 name="inputcity"
               />
+              <span style="color:red;" >
+              <?php echo $cityError  ?>
+              </span>
             </div>
             <div class="mb-2">
               <label
@@ -182,6 +195,9 @@
                 required
                 name="inputcountry"
               />
+              <span style="color:red;" >
+              <?php echo $countryError  ?>
+              </span>
             </div>
 
             <?php }
