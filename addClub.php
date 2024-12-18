@@ -44,7 +44,7 @@
   </head>
 <body>
  <h1 class=" text-white text-center text-xl ">Ajoute Club</h1>
-<form  action="./club.php" method="POST" class="card max-w-sm mx-auto p-2">
+<form  action="./logiqueAddClube.php" method="POST" class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"
