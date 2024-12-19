@@ -28,6 +28,7 @@ insert into Nationality (name,flage) values ('moroco','https://flagpedia.net/dat
        Foreign Key (id_club) REFERENCES club (id),
        Foreign Key (id_nationality) REFERENCES Nationality (id)
     ) ;
+    select * from players;
  
     create table footballplayer(
         id int not null PRIMARY key AUTO_INCREMENT,
@@ -62,4 +63,9 @@ insert into club(
 );
 SELECT * FROM club WHERE id='';
 
-select id from Nationality where name='moroco';
+ select players.name ,players.photo,players.position,players.status,players.rating,Nationality.flage,club.logo 
+ from players
+ inner join Nationality on Nationality.id=players.id_nationality
+ inner join club on club.id=players.id_club
+ where date_delat is NOT null ;
+

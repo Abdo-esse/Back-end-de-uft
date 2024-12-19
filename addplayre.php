@@ -25,7 +25,7 @@
         $nameClub=$_POST['nameClub'];
         $statue=$_POST['statue'];
        
-      $sql="insert into  players (name,position,status,rating,id_club,id_nationality) values(' $name','$position','$statue','$numberRating','$nameClub', '$countries' )";
+      $sql="insert into  players (name,photo,position,status,rating,id_club,id_nationality) values(' $name','$photoJeuor','$position','$statue','$numberRating','$nameClub', '$countries' )";
       $run= mysqli_query($conn,$sql);
       $id_payre=mysqli_insert_id($conn);
       // Print auto-generated id
