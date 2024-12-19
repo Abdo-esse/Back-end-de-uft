@@ -7,7 +7,7 @@
     $sqlClub="select * from club";
     $resultClub=mysqli_query($conn,$sqlClub);
     if(isset($_POST['submit'])){
-     
+
         $numberPassing=$_POST['numberPassing'];
         $numberDribbling=$_POST['numberDribbling'];
         $numberDefending=$_POST['numberDefending'];
@@ -17,11 +17,12 @@
         $numberShooting=$_POST['numberShooting'];
         $name=$_POST['name'];
         $photoJeuor=$_POST['photoJeuor'];
-        $countries=$_POST['countries'];
+        $countries=$_POST['nationality'];
         $position=$_POST['position'];
         $nameClub=$_POST['nameClub'];
-
-
+       
+       
+      
 
 
 
@@ -85,7 +86,7 @@
                 name="name"
                 class="inputsText fullName bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
-                required
+                
               />
             </div>
             <div class="mb-2">
@@ -100,7 +101,7 @@
                 name="photoJeuor"
                 class="inputsLien photoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
-                required
+                
               />
             </div>
             <div class="md:flex gap-2">
@@ -140,7 +141,7 @@
                   
 
                   <?php while($row=mysqli_fetch_assoc($resultNatinalite)){?>
-                    <option value=" <?php   echo $row['name'] ?>"> <?php   echo $row['name'] ?></option>
+                    <option value=" <?php   echo $row['id'] ?>"> <?php   echo $row['name'] ?></option>
                     <?php } ?>
                   </select>
                 </div>
@@ -159,7 +160,7 @@
               >
               <option value="">select club</option>
               <?php while($row=mysqli_fetch_assoc($resultClub)){?>
-                    <option value=" <?php   echo $row['name'] ?>"> <?php   echo $row['name'] ?></option>
+                    <option value=" <?php   echo $row['id'] ?>"> <?php   echo $row['name'] ?></option>
                     <?php } ?>
 
               </select>
@@ -180,7 +181,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput ratingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                  
                   />
                 </div>
 
@@ -202,7 +203,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput paceInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                   
                   />
                 </div>
 
@@ -224,7 +225,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput shootingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                  
                   />
                 </div>
               </div>
@@ -247,7 +248,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput passingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                   
                   />
                 </div>
                 <div class="mb-2">
@@ -268,7 +269,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput dribblingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                  
                   />
                 </div>
               </div>
@@ -291,7 +292,7 @@
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput defendingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                  
                   />
                 </div>
                 <div class="mb-2">
@@ -308,19 +309,19 @@
                   <input
                     type="number"
                     id="numberPhysical"
-                    name="number-physical"
+                    name="numberPhysical"
                     
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput physicalInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
-                    required
+                   
                   />
                 </div>
               </div>
             </div>
 
             <button
-              type="button"
+              type="submit"
               name="submit"
               class="sendData text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
