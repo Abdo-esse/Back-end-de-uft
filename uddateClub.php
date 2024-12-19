@@ -64,7 +64,7 @@
                   where id='$id'";
         $run= mysqli_query($conn,$test);
         if(isset( $run)){
-          header("location: ./club.php");
+          header("location: club.php");
           exit;
       }
     }

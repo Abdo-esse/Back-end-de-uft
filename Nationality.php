@@ -42,7 +42,7 @@
 <div class="page">
 <?php  
  
- include_once("header.php");
+ include_once("./header.php");
  include_once("conectdb.php");
  
  $test="select * from Nationality";

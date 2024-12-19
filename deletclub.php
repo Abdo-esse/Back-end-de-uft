@@ -5,7 +5,7 @@
           $query=mysqli_query($conn,"delete from club where id='$id'");
           if($query){
                
-               echo"<script>document.location='club.php';</script>";
+               echo"<script>document.location='./club.php';</script>";
           }
 
 
