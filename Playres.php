@@ -64,7 +64,7 @@
     </div>
     <div class="button-add-club p-2" >
       <button class="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" >
-        <a href="addNationality.php"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <a href="addplayre.php"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
 </svg>
 </a>
@@ -79,7 +79,22 @@
                     Name
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    photo
+                </th>
+                <th scope="col" class="px-6 py-3">
+                position
+                </th>
+                <th scope="col" class="px-6 py-3">
+                status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                rating
+                </th>
+                <th scope="col" class="px-6 py-3">
                    Flag
+                </th>
+                <th scope="col" class="px-6 py-3">
+                club
                 </th>
                 
                 <th scope="col" class="px-6 py-3">
@@ -92,6 +107,21 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="px-6 py-4">
             
+                </td>
+                <td class="px-6 py-4">
+            <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
+                </td>
+            <td class="px-6 py-4">
+            
+                </td>
+            <td class="px-6 py-4">
+            
+                </td>
+            <td class="px-6 py-4">
+            
+                </td>
+            <td class="px-6 py-4">
+            <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
                 </td>
             <td class="px-6 py-4">
             <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
