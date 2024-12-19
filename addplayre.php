@@ -2,15 +2,24 @@
 <html lang="en">
     <?php 
     include_once("conectdb.php");
+    $sqlNatinalite="select * from Nationality";
+    $resultNatinalite=mysqli_query($conn,$sqlNatinalite);
+    $sqlClub="select * from club";
+    $resultClub=mysqli_query($conn,$sqlClub);
     if(isset($_POST['submit'])){
      
-        $numberPassing=
-        $numberDribbling=
-        $numberDefending=
-        $numberPhysical=
-        $numberRating=
-        $numberPace=
-        $numberShooting=
+        $numberPassing=$_POST['numberPassing'];
+        $numberDribbling=$_POST['numberDribbling'];
+        $numberDefending=$_POST['numberDefending'];
+        $numberPhysical=$_POST['numberPhysical'];
+        $numberRating=$_POST['numberRating'];
+        $numberPace=$_POST['numberPace'];
+        $numberShooting=$_POST['numberShooting'];
+        $name=$_POST['name'];
+        $photoJeuor=$_POST['photoJeuor'];
+        $countries=$_POST['countries'];
+        $position=$_POST['position'];
+        $nameClub=$_POST['nameClub'];
 
 
 
@@ -73,6 +82,7 @@
               <input
                 type="name"
                 id="name"
+                name="name"
                 class="inputsText fullName bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
                 required
@@ -87,6 +97,7 @@
               <input
                 type="text"
                 id="photoJeuor"
+                name="photoJeuor"
                 class="inputsLien photoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
                 required
@@ -101,6 +112,7 @@
                 >
                 <select
                   id="countries"
+                  name="position"
                   class="selectInput positionInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
                   <option onch value="">Choose a position</option>
@@ -124,8 +136,12 @@
                     name="nationality"
                     class="bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
-                    <option value="">select nationality</option>
-                     
+                  <option value="">select nationality</option>
+                  
+
+                  <?php while($row=mysqli_fetch_assoc($resultNatinalite)){?>
+                    <option value=" <?php   echo $row['name'] ?>"> <?php   echo $row['name'] ?></option>
+                    <?php } ?>
                   </select>
                 </div>
             </div>
@@ -138,9 +154,14 @@
               <select
                 
                 id="NameClub"
+                name="nameClub"
                 class="inputsText clubInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               >
               <option value="">select club</option>
+              <?php while($row=mysqli_fetch_assoc($resultClub)){?>
+                    <option value=" <?php   echo $row['name'] ?>"> <?php   echo $row['name'] ?></option>
+                    <?php } ?>
+
               </select>
             </div>
             <div class="joueurs">
