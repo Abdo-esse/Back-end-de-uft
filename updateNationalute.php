@@ -8,7 +8,8 @@
  $nameError='';
  $flagError='';
 
- if(isset($_POST['submit'])){
+ if(isset($_POST['update'])){
+    $id=$_GET['updateId'];
     $name=$_POST['inputname'];
     $flage=$_POST['inputphoto'];
      
@@ -34,7 +35,7 @@
        }
      
      if (empty($nameError) && empty($flagError)) {
-    $query="insert into Nationality (name,flage) values('$name','$flage')";
+    $query=" update Nationality set name='$name',flage='$flage' where id='$id'";
     $run= mysqli_query($conn,$query);
     if(isset( $run)){
         header("location: ./Nationality.php");
@@ -88,6 +89,13 @@
 <h1 class=" text-white text-center text-xl ">Ajouter nationaliter
  </h1>
 <form   method="POST" class="card max-w-sm mx-auto p-2">
+    <?php 
+    include_once("conectdb.php");
+    $id=$_GET['updateId'];
+    $test="select * from Nationality where id='$id'";
+    $result=mysqli_query($conn,$test);
+   $data= mysqli_fetch_assoc($result)
+    ?>
             <div class="mb-2">
               <label
                 for="name"
@@ -99,7 +107,7 @@
                 id="name"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Full-Name"
-           
+                 value="<?php  echo $data['name'] ?>"
                 name="inputname"  
               />
               <span style="color:red;" >
@@ -117,7 +125,7 @@
                 id="photoJeuor"
                 class=" bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Entrer lien de limage"
-                
+                value="<?php  echo $data['flage'] ?>"
                 name="inputphoto"
               />
               <span style="color:red;" >
@@ -129,9 +137,9 @@
                  <button
               type="submit"
               class=" text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-              name="submit"
+              name="update"
             >
-              submit
+            update
             </button>
             
           </form>
