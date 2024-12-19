@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php 
+    include_once("conectdb.php");
+    if(isset($_POST['submit'])){
+     
+        $numberPassing=
+        $numberDribbling=
+        $numberDefending=
+        $numberPhysical=
+        $numberRating=
+        $numberPace=
+        $numberShooting=
+
+
+
+
+
+    }
+    
+    
+    
+    
+    
+    ?>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,7 +63,7 @@
     </style>
   </head>
 <body>
-<form  class="card max-w-sm mx-auto p-2">
+<form  method="POST" class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"
@@ -131,6 +155,7 @@
                   <input
                     type="number"
                     id="number-rating"
+                    name="numberRating"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput ratingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -152,6 +177,7 @@
                   <input
                     type="number"
                     id="number-pace"
+                    name="numberPace"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput paceInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -173,6 +199,7 @@
                   <input
                     type="number"
                     id="number-shooting"
+                    name="numberShooting"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput shootingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -195,6 +222,7 @@
                   <input
                     type="number"
                     id="number-passing"
+                    name="numberPassing"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput passingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -215,6 +243,7 @@
                   <input
                     type="number"
                     id="number-dribbling"
+                    name="numberDribbling"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput dribblingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -237,6 +266,7 @@
                   <input
                     type="number"
                     id="number-defending"
+                    name="numberDefending"
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput defendingInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -256,7 +286,9 @@
                   >
                   <input
                     type="number"
-                    id="number-physical"
+                    id="numberPhysical"
+                    name="number-physical"
+                    
                     aria-describedby="helper-text-explanation"
                     class="conditionPhisiqueIunput physicalInputs bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="1-99"
@@ -268,6 +300,7 @@
 
             <button
               type="button"
+              name="submit"
               class="sendData text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               submit
