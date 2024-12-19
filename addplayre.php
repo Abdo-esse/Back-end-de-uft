@@ -33,9 +33,17 @@
        if($position==="GK"){
         $sqlgk="insert into golkeeperPlayer (id_player,diving,handling,kicking,reflexes,speed,physical) values('$id_payre','$numberPace','$numberShooting','$numberPassing','$numberDribbling','$numberDefending','$numberPhysical') ";
         $run= mysqli_query($conn,$sqlgk);
+        if(isset( $run)){
+          header("location: ./Playres.php");
+          exit;
+      }
        }else{
         $sql="insert into footballplayer (id_player,pace,shooting,passing,dribbling,defending,physical) values('$id_payre','$numberPace','$numberShooting','$numberPassing','$numberDribbling','$numberDefending','$numberPhysical') ";
         $run= mysqli_query($conn,$sql);
+        if(isset( $run)){
+          header("location: ./Playres.php");
+          exit;
+      }
        }
 
 
