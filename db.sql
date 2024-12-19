@@ -67,5 +67,5 @@ SELECT * FROM club WHERE id='';
  from players
  inner join Nationality on Nationality.id=players.id_nationality
  inner join club on club.id=players.id_club
- where date_delat is NOT null ;
+ where date_delat is  null ;
 

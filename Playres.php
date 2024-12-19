@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php
+        include_once("conectdb.php");
+        $sql="select players.name ,players.photo,players.position,players.status,players.rating,Nationality.flage,club.logo 
+ from players
+ inner join Nationality on Nationality.id=players.id_nationality
+ inner join club on club.id=players.id_club
+ where date_delat is  null ;";
+ $resulta=mysqli_query($conn,$sql);
+  
+  
+  
+  ?>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -103,28 +115,31 @@
             </tr>
         </thead>
         <tbody>
-       
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <?php
+                        while($row=mysqli_fetch_assoc($resulta)){
+
+                         ?>
+             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="px-6 py-4">
-            
+            <?php   echo $row['name'] ?>
                 </td>
                 <td class="px-6 py-4">
-            <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
+            <img class="w-10 h-10 rounded-full" src="  <?php echo $row['photo'] ?>" alt="Jese image">
                 </td>
             <td class="px-6 py-4">
-            
+            <?php   echo $row['position'] ?>
                 </td>
             <td class="px-6 py-4">
-            
+            <?php   echo $row['status'] ?>
                 </td>
             <td class="px-6 py-4">
-            
+            <?php   echo $row['rating'] ?>
                 </td>
             <td class="px-6 py-4">
-            <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
+            <img class="w-10 h-10 rounded-full" src="  <?php   echo $row['flage'] ?>" alt="Jese image">
                 </td>
             <td class="px-6 py-4">
-            <img class="w-10 h-10 rounded-full" src=" " alt="Jese image">
+            <img class="w-10 h-10 rounded-full" src=" <?php   echo $row['logo'] ?> " alt="Jese image">
                 </td>
                 
                
@@ -140,8 +155,12 @@
 
                   </a>
                 </td>
+                
+              
             </tr>
-             
+            <?php
+                        }
+            ?>
           
         </tbody>
     </table>
