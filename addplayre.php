@@ -2,10 +2,13 @@
 <html lang="en">
     <?php 
     include_once("conectdb.php");
+
     $sqlNatinalite="select * from Nationality";
     $resultNatinalite=mysqli_query($conn,$sqlNatinalite);
+
     $sqlClub="select * from club";
     $resultClub=mysqli_query($conn,$sqlClub);
+
     if(isset($_POST['submit'])){
 
         $numberPassing=$_POST['numberPassing'];
@@ -20,9 +23,20 @@
         $countries=$_POST['nationality'];
         $position=$_POST['position'];
         $nameClub=$_POST['nameClub'];
+        $statue=$_POST['statue'];
        
-       
-      
+      $sql="insert into  players (name,position,status,rating,id_club,id_nationality) values(' $name','$position','$statue','$numberRating','$nameClub', '$countries' )";
+      $run= mysqli_query($conn,$sql);
+      $id_payre=mysqli_insert_id($conn);
+      // Print auto-generated id
+// echo "New record has id: " .$id_payre ;
+       if($position==="GK"){
+        $sqlgk="insert into golkeeperPlayer (id_player,diving,handling,kicking,reflexes,speed,physical) values('$id_payre','$numberPace','$numberShooting','$numberPassing','$numberDribbling','$numberDefending','$numberPhysical') ";
+        $run= mysqli_query($conn,$sqlgk);
+       }else{
+        $sql="insert into footballplayer (id_player,pace,shooting,passing,dribbling,defending,physical) values('$id_payre','$numberPace','$numberShooting','$numberPassing','$numberDribbling','$numberDefending','$numberPhysical') ";
+        $run= mysqli_query($conn,$sql);
+       }
 
 
 
@@ -127,6 +141,24 @@
                   <option value="GK">GK</option>
                 </select>
               </div>
+              <div class="mb-2">
+                  <label
+                    for="nationality"
+                    class="block mb-2 text-sm font-medium text-white dark:text-white"
+                    >statue</label
+                  >
+                  <select
+                    name="statue"
+                    class="bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  >
+                  <option value="">select statue</option>
+                  <option value="principale">principale</option>
+                  <option value="reserv">reserv</option>
+                  
+
+                  
+                  </select>
+                </div>
               <div class="mb-2">
                   <label
                     for="nationality"

@@ -52,7 +52,7 @@ insert into Nationality (name,flage) values ('moroco','https://flagpedia.net/dat
         id_player int not null,
         Foreign Key (id_player) REFERENCES players (id)
     );
- show TABLES;
+insert into golkeeperPlayer (diving,handling,kicking,reflexes,speed,physical,id_player) VALUES()
 
 insert into club(
    VALUES
