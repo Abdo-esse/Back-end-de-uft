@@ -1,17 +1,16 @@
-import{selectInput} from "./validationDuForm.js"
+
 
 //div des inputs du joueurs
 let joueur=document.querySelector('.joueurs')
 
-
 //les labelle des  des inputs du GK
 const labelGolkepr=document.querySelectorAll('.goolkepr')
-
 
 //les labelle des  des inputs du GK
 const labelJoueur=document.querySelectorAll('.labelJoueur')
 
-
+// select
+let selectInput=document.querySelector('.selectInput')
 
 
 
@@ -37,6 +36,3 @@ function formedynamiq() {
 
 selectInput.addEventListener('change',formedynamiq)
 
-export{
-    labelJoueur,labelGolkepr,joueur
-}

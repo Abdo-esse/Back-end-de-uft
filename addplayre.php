@@ -90,44 +90,20 @@
                   <option value="GK">GK</option>
                 </select>
               </div>
-              <!-- <div class="mb-2">
+              <div class="mb-2">
                   <label
                     for="nationality"
                     class="block mb-2 text-sm font-medium text-white dark:text-white"
                     >Nationality</label
                   >
-                  <selec
+                  <select
                     name="nationality"
                     class="bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option value="">select nationality</option>
-                     <option value="zimbabwean">Zimbabwean</option>
+                     
                   </select>
-                </div> -->
-            </div>
-            <div class="mb-2">
-              <!-- <label
-                  class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  for="multiple_flag"
-                  >Upload flag</label
-                >
-                <input
-                  class=" image block w-full text-sm text-gray border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                  id="multiple_flag"
-                  type="file"
-                /> -->
-              <label
-                for="photoFlag"
-                class="block mb-2 text-sm font-medium text-white dark:text-white"
-                >Upload flag</label
-              >
-              <input
-                type="name"
-                id="photoFlag"
-                class="inputsLien flagInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Entrer lien de limage"
-                required
-              />
+                </div>
             </div>
             <div class="mb-2">
               <label
@@ -135,37 +111,13 @@
                 class="block mb-2 text-sm font-medium text-white dark:text-white"
                 >Name Club</label
               >
-              <input
-                type="name"
+              <select
+                
                 id="NameClub"
                 class="inputsText clubInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Full-Club"
-                required
-              />
-            </div>
-            <div class="mb-2">
-              <!-- <label
-                  class="block mb-2 text-sm font-medium text-white dark:text-white"
-                  for="multiple_logo"
-                  >Upload logo</label
-                >
-                <input
-                  class="image block w-full text-sm text-gray border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                  id="multiple_logo"
-                  type="file"
-                /> -->
-              <label
-                for="photoLogo"
-                class="block mb-2 text-sm font-medium text-white dark:text-white"
-                >Upload photo</label
               >
-              <input
-                type="name"
-                id="photoLogo"
-                class="inputsLien logoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Entrer lien de limage"
-                required
-              />
+              <option value="">select club</option>
+              </select>
             </div>
             <div class="joueurs">
               <div class="grid grid-cols-3 gap-2">
@@ -321,5 +273,9 @@
               submit
             </button>
           </form>
+
+
+
+          <script  src="./asset/js/fourmedynamique.js"></script>
 </body>
 </html>
